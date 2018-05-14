@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoteEducationalServicesWebService", "RemoteEducationalServicesWebService\RemoteEducationalServicesWebService.csproj", "{EFF1E693-9CED-416D-8619-CAA16AA6A464}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoteEducationalServicesWebApplication", "RemoteEducationalServicesWebApplication\RemoteEducationalServicesWebApplication.csproj", "{560AEA09-74E8-4433-A3F6-207F34513849}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EFF1E693-9CED-416D-8619-CAA16AA6A464} = {EFF1E693-9CED-416D-8619-CAA16AA6A464}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

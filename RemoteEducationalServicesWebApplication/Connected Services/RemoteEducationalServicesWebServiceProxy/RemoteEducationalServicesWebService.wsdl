@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="CreateUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pass" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="firstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dateOfBirth" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="phoneNumber" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="streetName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="houseNumber" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="unitNumber" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="suburb" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="state" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="postCode" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CreateUserResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateDeveloperAccount">
+        <s:complexType />
+      </s:element>
+      <s:element name="CreateDeveloperAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CreateDeveloperAccountResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateCredentials">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateCredentialsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ValidateCredentialsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CreateUserSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateUser" />
+  </wsdl:message>
+  <wsdl:message name="CreateUserSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateDeveloperAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateDeveloperAccount" />
+  </wsdl:message>
+  <wsdl:message name="CreateDeveloperAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateDeveloperAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateCredentialsSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidateCredentials" />
+  </wsdl:message>
+  <wsdl:message name="ValidateCredentialsSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateCredentialsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="RemoteEducationalServicesWebServiceSoap">
+    <wsdl:operation name="CreateUser">
+      <wsdl:input message="tns:CreateUserSoapIn" />
+      <wsdl:output message="tns:CreateUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateDeveloperAccount">
+      <wsdl:input message="tns:CreateDeveloperAccountSoapIn" />
+      <wsdl:output message="tns:CreateDeveloperAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateCredentials">
+      <wsdl:input message="tns:ValidateCredentialsSoapIn" />
+      <wsdl:output message="tns:ValidateCredentialsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RemoteEducationalServicesWebServiceSoap" type="tns:RemoteEducationalServicesWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateUser">
+      <soap:operation soapAction="http://tempuri.org/CreateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDeveloperAccount">
+      <soap:operation soapAction="http://tempuri.org/CreateDeveloperAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateCredentials">
+      <soap:operation soapAction="http://tempuri.org/ValidateCredentials" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RemoteEducationalServicesWebServiceSoap12" type="tns:RemoteEducationalServicesWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateUser">
+      <soap12:operation soapAction="http://tempuri.org/CreateUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDeveloperAccount">
+      <soap12:operation soapAction="http://tempuri.org/CreateDeveloperAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateCredentials">
+      <soap12:operation soapAction="http://tempuri.org/ValidateCredentials" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RemoteEducationalServicesWebService">
+    <wsdl:port name="RemoteEducationalServicesWebServiceSoap" binding="tns:RemoteEducationalServicesWebServiceSoap">
+      <soap:address location="http://localhost:50740/RemoteEducationalServicesWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RemoteEducationalServicesWebServiceSoap12" binding="tns:RemoteEducationalServicesWebServiceSoap12">
+      <soap12:address location="http://localhost:50740/RemoteEducationalServicesWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
