@@ -97,10 +97,10 @@ namespace RemoteEducationalServicesWebService
         [WebMethod]
         public bool CreateDeveloperAccount()
         {
-            if (CreateUser("admin", "admin", "eli", "anderson", "eli@eli.com", "02-11-1988", 0429379599, "cambridge", 40, 0, "fitzgibbon", "admin", 4018))
+            if (CreateUser("student1", "admin", "eli", "anderson", "eli@eli.com", "02-11-1988", 0429379599, "cambridge", 40, 0, "fitzgibbon", "admin", 4018))
             {
-                var userIdQuery = "(SELECT userId FROM users WHERE userName = 'admin')";
-                var query = $"INSERT INTO user_roles (user, role) VALUES ({userIdQuery}, 1)";
+                var userIdQuery = "(SELECT userId FROM users WHERE userName = 'student1')";
+                var query = $"INSERT INTO user_roles (user, role) VALUES ({userIdQuery}, 2)";
                 Model.Database.GetConnection().Execute(query);
                 return true;
             }

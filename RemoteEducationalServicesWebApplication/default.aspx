@@ -105,7 +105,7 @@
    
 	<form id="form1" runat="server"  class="centre">
          <!--  <asp:Login ID="ctlLogin" runat="server" OnAuthenticate="ctlLogin_Authenticate"/> -->
-        <!-- <asp:Button ID="btncreate" runat="server" Text="Create master user" OnClick="btncreate_Click" /> -->
+         <asp:Button ID="btncreate" runat="server" Text="Create master user" OnClick="btncreate_Click" /> 
 		<div class="login-form">
 			
 					<img runat="server" src="~/images/Remote Educational Services logo.png" alt="logo" style="width: 380px;" />

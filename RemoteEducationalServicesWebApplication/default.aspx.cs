@@ -21,7 +21,7 @@ namespace RemoteEducationalServicesWebApplication
           
             if (loggedIn)
             {
-                Response.Redirect("~/Pages/NewUser.aspx");
+                Response.Redirect("~/Pages/Booking.aspx");
             } else
             {
                 lblStatus.ForeColor = System.Drawing.Color.Red;
